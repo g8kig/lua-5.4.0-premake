@@ -11,24 +11,24 @@ project "Lua54"
 	   "src/lapi.c",     "src/lcode.c",   "src/lctype.c",  "src/ldebug.c", 
 	   "src/ldo.c",      "src/ldump.c",   "src/lfunc.c",   "src/lgc.c", 
 	   "src/llex.c",     "src/lmem.c",    "src/lobject.c", "src/lopcodes.c", 
-           "src/lparser.c",  "src/lstate.c",  "src/lstring.c", "src/ltable.c",  
-           "src/ltm.c",      "src/lundump.c", "src/lvm.c",     "src/lzio.c" }
+      "src/lparser.c",  "src/lstate.c",  "src/lstring.c", "src/ltable.c",  
+      "src/ltm.c",      "src/lundump.c", "src/lvm.c",     "src/lzio.c" }
 
    filter { "action:vs*", "configurations:Release" }
 	buildoptions "/GL"
  	linkoptions "/LTCG" 
 
    filter "action:vs*"
-  	defines { "_CRT_SECURE_NO_WARNINGS", "LUA_BUILD_AS_DLL" }
-   	linkoptions "/DEF:Lua54.def"
+  	   defines { "_CRT_SECURE_NO_WARNINGS", "LUA_BUILD_AS_DLL" }
+      linkoptions "/DEF:Lua54.def"
 
    filter "configurations:Debug"
-      	defines { "DEBUG" }
-      	symbols "On"
+      defines { "DEBUG" }
+      symbols "On"
 
    filter "configurations:Release"
    	defines { "NDEBUG" }
-      	optimize "On"
+      optimize "On"
 
 project "Lua54Lib"
    kind "SharedLib"
@@ -36,7 +36,6 @@ project "Lua54Lib"
    targetdir "bin/%{cfg.buildcfg}"
    links { "Lua54" }
    libdirs { "bin/%{cfg.buildcfg}" }
-   linkoptions "/DEF:Lua54Lib.def"
 
    files { "src/**.h", "src/lauxlib.c",  "src/lbaselib.c", "src/lcorolib.c", 
                        "src/ldblib.c",   "src/linit.c",    "src/liolib.c", 
@@ -44,19 +43,20 @@ project "Lua54Lib"
                        "src/ltablib.c",  "src/lutf8lib.c", "src/loslib.c"  }
 
    filter { "action:vs*", "configurations:Release" }
-	buildoptions "/GL"
- 	linkoptions "/LTCG" 
+	   buildoptions "/GL"
+ 	   linkoptions "/LTCG" 
 
    filter "action:vs*"
-  	defines { "_CRT_SECURE_NO_WARNINGS", "LUA_BUILD_AS_DLL" }
+  	   defines { "_CRT_SECURE_NO_WARNINGS", "LUA_BUILD_AS_DLL" }
+      linkoptions "/DEF:Lua54Lib.def"
 
    filter "configurations:Debug"
-      	defines { "DEBUG" }
-      	symbols "On"
+     	defines { "DEBUG" }
+     	symbols "On"
 
    filter "configurations:Release"
    	defines { "NDEBUG" }
-      	optimize "On"
+     	optimize "On"
 
 project "Lua"
    kind "ConsoleApp"
@@ -75,12 +75,12 @@ project "Lua"
   	defines { "_CRT_SECURE_NO_WARNINGS", "LUA_BUILD_AS_DLL" }
 
    filter "configurations:Debug"
-      	defines { "DEBUG" }
-      	symbols "On"
+     	defines { "DEBUG" }
+     	symbols "On"
 
    filter "configurations:Release"
    	defines { "NDEBUG" }
-      	optimize "On"
+     	optimize "On"
 
 project "Luac"
    kind "ConsoleApp"
@@ -102,9 +102,9 @@ project "Luac"
   	defines { "_CRT_SECURE_NO_WARNINGS", "LUA_BUILD_AS_DLL" }
 
    filter "configurations:Debug"
-      	defines { "DEBUG" }
-      	symbols "On"
+     	defines { "DEBUG" }
+     	symbols "On"
 
    filter "configurations:Release"
    	defines { "NDEBUG" }
-      	optimize "On"
+     	optimize "On"
