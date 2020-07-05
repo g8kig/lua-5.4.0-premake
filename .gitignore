@@ -17,3 +17,6 @@ obj/Release/Lua/Lua.vcxproj.FileListAbsolute.txt
 obj/Release/Lua54/Lua54.vcxproj.FileListAbsolute.txt
 obj/Release/Lua54Lib/Lua54Lib.vcxproj.FileListAbsolute.txt
 obj/Release/Luac/Luac.vcxproj.FileListAbsolute.txt
+*.db-shm
+*.db-wal
+*.opendb
