@@ -20,3 +20,5 @@ obj/Release/Luac/Luac.vcxproj.FileListAbsolute.txt
 *.db-shm
 *.db-wal
 *.opendb
+/.vs
+/obj/Debug
